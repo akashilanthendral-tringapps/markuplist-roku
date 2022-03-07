@@ -1,0 +1,37 @@
+<component name="listItemComponent" extends="Group">
+    <interface>
+        <field id="itemContent" type="node" onChange="setContent" />
+        <field id="focusPercent" type="float" onChange="setVisibility" />
+    </interface>
+    <script type="text/brightscript">
+        <![CDATA[ 
+            sub init()
+                m.myLabel = m.top.findNode("myLabel")
+                m.myPoster1 = m.top.findNode("myPoster1")
+                m.myPoster2 = m.top.findNode("myPoster2")
+            end sub
+
+            sub setContent()
+                itemContentValues = m.top.itemContent
+                m.myLabel.text = itemContentValues.labelValue
+                m.myPoster1.uri = itemContentValues.posterUri1
+                m.myPoster2.uri = itemContentValues.posterUri2
+            end sub
+
+            sub setVisibility()
+                m.myPoster2.opacity = m.top.focusPercent
+            end sub
+
+            
+
+            
+        ]]>
+    </script>
+    <children>
+        <Poster id="myPoster1" translation="[0,0]" width="53" height="30" />
+        <Label id="myLabel" translation="[100,0]" />
+        <Poster id="myPoster2" width="53" height="30" translation="[200,0]" opacity="0.0" />
+    </children>
+    <!-- <script type="text/brightscript" uri="listItemComponent.brs" /> -->
+
+</component>
