@@ -1,8 +1,11 @@
 <component name="listFields" extends="ContentNode">
    <interface>
-       <field id="labelValue" type="String" />
-       <field id="posterUri1" type="String" />
-       <field id="posterUri2" type="String" />
+       <field id="movieName" type="String" />
+       <field id="movieDesc" type="String" />
+       <field id="avengers_poster" type="String" />
+       <field id="unfocusedButton" type="String"/>
+       <field id="focusedButton" type="String"/>
+       <field id="isFocused" type="boolean"/>
    </interface>
     
 </component>
